@@ -1,0 +1,41 @@
+CREATE TABLE Empl (
+    EmpID INT PRIMARY KEY,
+    EmpName VARCHAR(10),
+    Designation VARCHAR(15),
+    DOJ DATE,
+    Sal DECIMAL(10,2),
+    Comm DECIMAL(10,2)
+);
+
+INSERT INTO Empl (EmpID, EmpName, Designation, DOJ, Sal, Comm)
+VALUES 
+(8369, 'SMITH', 'CLERK', '1990-12-18', 800.00, NULL),
+(8499, 'ANYA', 'SALESMAN', '1991-02-20', 2600.00, 300.00),
+(8521, 'SETH', 'SALESMAN', '1991-02-22', 1250.00, 500.00),
+(8882, 'SHIVANSH', 'MANAGER', '1991-05-01', 2450.00, NULL);
+
+SELECT EmpName, DOJ
+FROM Empl
+WHERE DOJ < '1991-03-01';
+
+SELECT *
+FROM Empl
+WHERE Comm IS NULL;
+
+SELECT EmpName, Sal
+FROM Empl
+WHERE Sal BETWEEN 2500 AND 4000;
+
+SELECT EmpName
+FROM Empl
+WHERE EmpName LIKE '%H%'
+ORDER BY EmpName ASC;
+
+SELECT EmpName, Designation, Sal
+FROM Empl
+WHERE Sal IN (
+    SELECT MAX(Sal)
+    FROM Empl
+    GROUP BY Designation
+);
+

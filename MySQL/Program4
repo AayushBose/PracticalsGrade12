@@ -1,0 +1,33 @@
+CREATE TABLE Hospital (
+    No INT PRIMARY KEY,
+    Name VARCHAR(20),
+    Age INT,
+    Department VARCHAR(20),
+    Dateofadm DATE,
+    Charges INT,
+    Sex CHAR(1)
+);
+
+INSERT INTO Hospital (No, Name, Age, Department, Dateofadm, Charges, Sex)
+VALUES
+(1, 'Sandeep', 55, 'Surgery', '1998-02-23', 300, 'M'),
+(2, 'Ravina', 24, 'Orthopedic', '1998-01-20', 200, 'F'),
+(3, 'Karan', 45, 'Orthopedic', '1998-02-19', 200, 'M'),
+(4, 'Tarun', 12, 'Surgery', '1998-01-01', 300, 'M'),
+(5, 'Zubin', 36, 'ENT', '1998-01-12', 250, 'M');
+
+-- i) To list the names of female patients who are in Orthopedic department.
+SELECT Name FROM Hospital WHERE Sex = 'F' AND Department = 'Orthopedic';
+
+-- ii) To count the number of patients with age greater than 30.
+SELECT COUNT(*) AS PatientsAbove30 FROM Hospital WHERE Age > 30;
+
+-- iii) To show all information about the patients of cardiology department.
+SELECT * FROM Hospital WHERE Department = 'Cardiology';
+
+-- iv) Add a new row with relevant details.
+INSERT INTO Hospital (No, Name, Age, Department, Dateofadm, Charges, Sex)
+VALUES (6, 'Anita', 40, 'Cardiology', '1998-03-10', 400, 'F');
+
+-- v) To display the number of patients in each department.
+SELECT Department, COUNT(*) AS NumPatients FROM Hospital GROUP BY Department;

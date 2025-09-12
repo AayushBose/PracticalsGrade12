@@ -1,0 +1,19 @@
+CREATE TABLE Worker (
+    Ecode INT,
+    Name VARCHAR(50),
+    Designation VARCHAR(50),
+    PLevel VARCHAR(10),
+    DOB DATE
+);
+
+INSERT INTO Worker VALUES (11, 'RadheShyam', 'Supervisor', 'P001', '1981-08-23');
+INSERT INTO Worker VALUES (12, 'ChanderNath', 'Operator', 'P003', '1987-07-12');
+INSERT INTO Worker VALUES (13, 'Fizza', 'Operator', 'P003', '1983-10-14');
+INSERT INTO Worker VALUES (15, 'Ammen Ahmed', 'Mechanic', 'P002', '1984-03-13');
+INSERT INTO Worker VALUES (18, 'Sanya', 'Clerk', 'P002', '1983-06-09');
+
+SELECT * FROM Worker WHERE Name LIKE '%a';
+SELECT PLevel, COUNT(*) AS NumEmployees FROM Worker GROUP BY PLevel;
+SELECT * FROM Worker ORDER BY DOB DESC;
+ALTER TABLE Worker ADD experience INT;
+ALTER TABLE Worker ADD PRIMARY KEY (Ecode);

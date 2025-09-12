@@ -1,0 +1,36 @@
+CREATE TABLE SCHOOLBUS (
+    Rtno INT PRIMARY KEY,
+    Area_Covered VARCHAR(15),
+    Capacity INT,
+    NoOfStudents INT,
+    Distance INT,
+    Transporter VARCHAR(20),
+    Charges INT
+);
+
+INSERT INTO SCHOOLBUS (Rtno, Area_Covered, Capacity, NoOfStudents, Distance, Transporter, Charges)
+VALUES
+(1, 'Vasant Nagar', 100, 120, 18, 'Anand Travels', 25000),
+(2, 'Rohini Apt', 90, 80, 16, 'Yadav Co', 24000),
+(3, 'Yamuna Tower', 60, 55, 30, 'Anand Travels', 28000),
+(4, 'Krishna Apt', 100, 105, 35, 'Yadav Co', 30000);
+
+SELECT *
+FROM SCHOOLBUS
+WHERE Capacity > NoOfStudents
+ORDER BY Rtno;
+
+SELECT Area_Covered
+FROM SCHOOLBUS
+WHERE Distance > 15 AND Charges <= 22000;
+
+SELECT Rtno, Area_Covered, Charges / NoOfStudents AS AvgCostPerStudent
+FROM SCHOOLBUS;
+
+SELECT Transporter, SUM(Distance) AS TotalDistance
+FROM SCHOOLBUS
+GROUP BY Transporter;
+
+SELECT *
+FROM SCHOOLBUS
+WHERE NoOfStudents = (SELECT MIN(NoOfStudents) FROM SCHOOLBUS);

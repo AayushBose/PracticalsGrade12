@@ -1,0 +1,21 @@
+CREATE TABLE Coach (
+    CoachID INT PRIMARY KEY,
+    CoachName VARCHAR(50),
+    Age INT,
+    Sports VARCHAR(30),
+    DOJ DATE,
+    Fee INT,
+    Sex CHAR(1)
+);
+
+INSERT INTO Coach VALUES (1, 'Karan', 34, 'Karate', '1996-03-27', 1000, 'M');
+INSERT INTO Coach VALUES (2, 'Tarun', 36, 'Squash', '1998-01-20', 2000, 'M');
+INSERT INTO Coach VALUES (3, 'Zubin', 38, 'Karate', '1998-02-19', 2000, 'M');
+INSERT INTO Coach VALUES (4, 'Ravina', 31, 'Swimming', '1998-01-01', 1500, 'F');
+INSERT INTO Coach VALUES (5, 'Shailaja', 34, 'Basketball', '1997-04-23', 1200, 'F');
+
+SELECT AVG(Fee) FROM Coach WHERE Sports = 'Karate';
+SELECT Sports, COUNT(*) AS NumCoaches FROM Coach GROUP BY Sports;
+SELECT * FROM Coach WHERE YEAR(DOJ) = 1998;
+SELECT CoachName FROM Coach WHERE CoachName LIKE '%a';
+UPDATE Coach SET Fee = Fee + 400 WHERE Sports = 'Swimming';
