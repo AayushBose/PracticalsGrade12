@@ -1,8 +1,7 @@
 import mysql.connector
 
-conn = mysql.connector.connect(
-    host='localhost', user='root', password='Pass@123', database='Aayush'
-)
+conn = mysql.connector.connect(host='localhost', user='root', password='Pass@123', database='Aayush')
+
 cursor = conn.cursor()
 
 cursor.execute("""
@@ -11,8 +10,7 @@ cursor.execute("""
         StationeryName VARCHAR(50),
         Company VARCHAR(50),
         Price INT
-    );
-""")
+    );""")
 
 cursor.execute("DELETE FROM Stationery;")
 
@@ -26,10 +24,12 @@ stationery_data = [
 cursor.executemany(
     "INSERT INTO Stationery (S_ID, StationeryName, Company, Price) VALUES (%s, %s, %s, %s);",
     stationery_data)
+
 conn.commit()
 
 cursor.execute("""
     UPDATE Stationery SET Price = Price + 4;""")
+
 conn.commit()
 
 cursor.execute("""

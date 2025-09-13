@@ -13,8 +13,8 @@ cursor.execute("""
         DATEOFSTOCK DATE,
         PRICE INT,
         DISCOUNT INT
-    );
-""")
+    );""")
+
 cursor.execute("DELETE FROM INTERIORS;")
 
 interiors_data = [

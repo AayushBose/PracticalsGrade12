@@ -1,8 +1,6 @@
 import mysql.connector
 
-conn = mysql.connector.connect(
-    host='localhost', user='root', password='Pass@123', database='Aayush'
-)
+conn = mysql.connector.connect(host='localhost', user='root', password='Pass@123', database='Aayush')
 cursor = conn.cursor()
 
 cursor.execute("""
@@ -12,8 +10,7 @@ cursor.execute("""
         CostPerItem INT,
         Quantity INT,
         DateOfPurchase DATE
-    );
-""")
+    );""")
 
 cursor.execute("DELETE FROM Items;")  # I inserted this coz i was getting error again and again so i had to check with chatgpt where my code was going wrong
 
@@ -22,8 +19,7 @@ items_data = [
     (2, 'Printer', 15000, 3, '1997-05-21'),
     (3, 'Scanner', 18000, 1, '1998-08-29'),
     (4, 'Camera', 21000, 2, '1996-10-13'),
-    (5, 'Switch', 8000, 1, '1999-10-31')
-]
+    (5, 'Switch', 8000, 1, '1999-10-31')]
 
 cursor.executemany(
     "INSERT INTO Items (No, ItemName, CostPerItem, Quantity, DateOfPurchase) VALUES (%s, %s, %s, %s, %s);",
