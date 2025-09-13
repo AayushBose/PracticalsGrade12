@@ -1,0 +1,31 @@
+CREATE TABLE Employee (
+    Eid INT PRIMARY KEY,
+    Name VARCHAR(50),
+    Deptid INT,
+    Qualification VARCHAR(20),
+    Sex CHAR(1)
+);
+
+INSERT INTO Employee VALUES
+(1, 'Deepali', 101, 'MCA', 'F'),
+(2, 'Rajat', 101, 'BCA', 'M'),
+(3, 'Harita', 102, 'B.A', 'F'),
+(4, 'Harry', 102, 'M.A', 'M'),
+(5, 'Sumeet', 103, 'B.Tech', 'M');
+
+SELECT Name FROM Employee
+WHERE Sex = 'F';
+
+SELECT Deptid, COUNT(*) AS No_of_Employees
+FROM Employee
+GROUP BY Deptid;
+
+SELECT Name FROM Employee
+WHERE Name LIKE '%ee%';
+
+ALTER TABLE Employee
+ADD Salary DECIMAL(10,2);
+
+UPDATE Employee
+SET Qualification = 'M.A'
+WHERE Name = 'Harita';

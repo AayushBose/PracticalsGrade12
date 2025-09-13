@@ -1,0 +1,30 @@
+CREATE TABLE Sports_Master (
+    Event_name VARCHAR(50),
+    Evt_code INT,
+    No_in_team INT,
+    Event_date DATE,
+    Category VARCHAR(20)
+);
+
+INSERT INTO Sports_Master VALUES
+('100 mts run', 1001, 1, '2001-01-01', 'Junior'),
+('Volley ball', 1002, 9, '2001-02-01', 'Senior'),
+('Cricket', 1003, 11, '2001-12-01', 'Senior'),
+('Shot put', 1004, 1, '2001-01-13', 'Junior'),
+('Javelin', 1005, 1, '2001-02-01', 'Senior');
+
+SELECT * FROM Sports_Master
+ORDER BY Event_date DESC;
+
+SELECT Category, COUNT(*) AS No_of_Events
+FROM Sports_Master
+GROUP BY Category;
+
+DELETE FROM Sports_Master
+WHERE No_in_team > 10;
+
+ALTER TABLE Sports_Master
+ADD PRIMARY KEY (Evt_code);
+
+SELECT * FROM Sports_Master
+WHERE No_in_team < 5;

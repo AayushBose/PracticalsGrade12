@@ -1,0 +1,34 @@
+CREATE TABLE Movie (
+    No INT PRIMARY KEY,
+    Title VARCHAR(100),
+    Type VARCHAR(50),
+    Rating VARCHAR(5),
+    Stars VARCHAR(50),
+    Qty INT,
+    Price DECIMAL(7,2)
+);
+
+INSERT INTO Movie VALUES
+(1, 'Gone with the wind', 'Drama', 'G', 'Gable', 4, 39.95),
+(2, 'Friday the 13th', 'Horror', 'R', 'Jason', 2, 89.95),
+(3, 'Top Gun', 'Drama', 'PG', 'Cruise', 7, 49.95),
+(4, 'Splash', 'Comedy', 'G', 'Hanks', 3, 29.95),
+(5, 'Risky Business', 'Comedy', 'R', 'Cruise', 2, 44.95);
+
+SELECT AVG(Price) AS Avg_Price
+FROM Movie
+WHERE Rating != 'G';
+
+UPDATE Movie
+SET Price = Price * 1.15
+WHERE Type = 'Drama';
+
+ALTER TABLE Movie
+DROP COLUMN Stars;
+
+SELECT No, Title, Type, Qty, Price, (Qty * Price) AS Total_Price
+FROM Movie;
+
+SELECT *
+FROM Movie
+WHERE Type IN ('Horror', 'Comedy');
