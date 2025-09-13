@@ -1,7 +1,7 @@
 import mysql.connector
 
 conn = mysql.connector.connect(
-    host='localhost', user='root', password='$S@tiRyz115$', database='Aayush'
+    host='localhost', user='root', password='Pass@123', database='Aayush'
 )
 cursor = conn.cursor()
 
