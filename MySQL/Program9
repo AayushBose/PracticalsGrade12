@@ -1,4 +1,4 @@
-CREATE TABLE Employee (
+CREATE TABLE IF NOT EXISTS Employee (
     Eid INT PRIMARY KEY,
     Name VARCHAR(50),
     Deptid INT,

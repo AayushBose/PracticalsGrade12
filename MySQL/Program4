@@ -1,4 +1,4 @@
-CREATE TABLE Hospital (
+CREATE TABLE IF NOT EXISTS Hospital (
     No INT PRIMARY KEY,
     Name VARCHAR(20),
     Age INT,

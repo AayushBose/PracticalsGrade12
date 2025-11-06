@@ -1,4 +1,4 @@
-CREATE TABLE Coach (
+CREATE TABLE IF NOT EXISTS Coach (
     CoachID INT PRIMARY KEY,
     CoachName VARCHAR(50),
     Age INT,

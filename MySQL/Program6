@@ -1,4 +1,4 @@
-CREATE TABLE Worker (
+CREATE TABLE IF NOT EXISTS Worker (
     Ecode INT,
     Name VARCHAR(50),
     Designation VARCHAR(50),

@@ -1,4 +1,4 @@
-CREATE TABLE Empl (
+CREATE TABLE IF NOT EXISTS Empl (
     EmpID INT PRIMARY KEY,
     EmpName VARCHAR(10),
     Designation VARCHAR(15),
