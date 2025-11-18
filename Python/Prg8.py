@@ -1,0 +1,6 @@
+file = open("C:\\Users\\aayus\\OneDrive\\Documents\\GitHub\\PRACTICALS\\Python\\try.txt",'r+')
+file.seek(0)
+content = file.read()
+file1 = open("C:\\Users\\aayus\\OneDrive\\Documents\\GitHub\\PRACTICALS\\Python\\final.txt",'w+')
+file1.writelines(content.replace(' ','#'))
+print(content)
