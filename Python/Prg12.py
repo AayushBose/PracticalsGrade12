@@ -13,6 +13,5 @@ def update_salary(filename):
     with open(filename, 'wb') as f:
         pickle.dump(emp, f)
 
-# Example usage:
-# write_emp('emp.dat')
-# update_salary('emp.dat')
+write_emp('emp.dat')
+update_salary('emp.dat')

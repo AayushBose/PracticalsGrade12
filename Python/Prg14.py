@@ -23,6 +23,5 @@ def search_emp(file, empno_search):
     if not found:
         print("Empno not found.")
 
-# Example usage:
-# create_emp_csv('emp.csv')
-# search_emp('emp.csv', '101')
+create_emp_csv('emp.csv')
+search_emp('emp.csv', '101')

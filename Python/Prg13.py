@@ -17,6 +17,5 @@ def read_sports(file):
         for row in reader:
             print(row)
 
-# Example usage:
-# write_sports('SPORTS.CSV')
-# read_sports('SPORTS.CSV')
+write_sports('SPORTS.CSV')
+read_sports('SPORTS.CSV')

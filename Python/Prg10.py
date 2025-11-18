@@ -21,6 +21,5 @@ def CountRecAuthor(filename, author_name):
             pass
     print("Number of books by", author_name, ":", count)
 
-# Example usage:
-# CreateFile('Book.dat')
-# CountRecAuthor('Book.dat', 'Agatha Christie')
+CreateFile('Book.dat')
+CountRecAuthor('Book.dat', 'Agatha Christie')

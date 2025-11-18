@@ -14,5 +14,4 @@ def CountRec(filename):
             pass
     print("Total students above 75%:", count)
 
-# Example usage:
-# CountRec('STUDENT.DAT')
+CountRec('STUDENT.DAT')
